@@ -1,0 +1,17 @@
+name: jira_worklogger
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+targets:
+  jira_worklogger:
+    main: src/jira_worklogger.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal 
+
+crystal: '>= 1.12.1'
+
+license: MIT
