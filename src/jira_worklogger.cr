@@ -1,18 +1,16 @@
 require "kemal"
 require "csv"
 
-require "./controllers/worklog_controller"
+require "./controllers/file_worklog_controller"
 
 module JiraWorklogger
   VERSION = "0.1.0"
 
-  post "/register" do |env|
-    test = env.params.json["test"].as(String)
-    test
+  before_post "/registe/file" do |env|
   end
 
   post "/register/file" do |env|
-    controller = WorklogController.new
+    controller = FileWorklogController.new
     controller.execute(env.request, env.response)
   end
 

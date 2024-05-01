@@ -1,4 +1,4 @@
-# jira_worklogger
+# Jira Worklogger
 
 TODO: Write a description here
 
@@ -24,4 +24,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+- [Messias](https://github.com/messiviski) - creator and maintainer

@@ -1,8 +1,8 @@
-class ClockifyWorklogService
-  def log_time(file_path : String) : Bool
-  end
+require "../strategies/strategy"
 
-  def read_file(file : File)
-    
+class ClockifyWorklogService
+  def log_time(strategy : Strategy) : Bool
+    p strategy.rows
+    true
   end
 end
