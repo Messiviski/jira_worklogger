@@ -1,29 +1,21 @@
+require "athena"
 require "http"
 require "csv"
 
 require "../services/clockify_worklog_service"
-require "../strategies/clockify_strategy"
+require "../readers/clockify_file_reader"
 
-class FileWorklogController
-  alias Request = HTTP::Request
-  alias Response = HTTP::Server::Response
+class FileWorklogController < ATH::Controller
 
-  def execute(request : Request, response : Response) : Response
-    strategy = ClockifyStrategy.new(parse_form_data(request), separator: ',')
+  @[ARTA::Post("/register/file")]
+  def execute(request : ATH::Request) : ATH::Response
+    body = request.body
+    raise "No file was received!" unless body
 
+    strategy = ClockifyFileReader.new(body)
     service = ClockifyWorklogService.new
     service.log_time(strategy)
 
-    response.respond_with_status(HTTP::Status::OK, "OK")
-    response
-  end
-
-  private def parse_form_data(request : Request) : IO
-    file = nil
-
-    HTTP::FormData.parse(request) { |upload| file = upload.body }
-    raise "No file received!" if file.nil?
-
-    file
+    ATH::Response.new(contenc: "sucess!", status: HTTP::Status::OK)
   end
 end

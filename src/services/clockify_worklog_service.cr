@@ -1,8 +1,7 @@
-require "../strategies/strategy"
+require "../readers/file_reader"
 
 class ClockifyWorklogService
-  def log_time(strategy : Strategy) : Bool
-    p strategy.rows
+  def log_time(strategy : FileReader) : Bool
     true
   end
 end

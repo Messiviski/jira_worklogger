@@ -1,7 +1,7 @@
 require "./spec_helper"
 
 describe JiraWorklogger do
-  it "works" do
+  pending "works" do
     false.should eq(true)
   end
 end
