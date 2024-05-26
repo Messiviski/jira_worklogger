@@ -2,16 +2,15 @@ name: jira_worklogger
 version: 0.1.0
 
 authors:
-  - your-name-here <your-email-here>
+  - MessiasOlimpio messiasolimpio@hotmail.com
 
 targets:
   server:
     main: src/server.cr
 
 dependencies:
-  athena:
-    github: athena-framework/framework
-    version: '~> 0.19.0'
+  grip:
+    github: grip-framework/grip
 
 crystal: '>= 1.12.1'
 
