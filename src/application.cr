@@ -1,6 +1,6 @@
 require "grip"
 
-require "./controllers/file_worklog_controller"
+require "./controllers/*"
 
 class Application < Grip::Application
   def initialize(environment : String)
@@ -8,9 +8,14 @@ class Application < Grip::Application
 
     scope "/api" do
       scope "/v1" do
+        exception Grip::Exceptions::NotFound, NotFoundController
+        exception Grip::Exceptions::InternalServerError, InternalServerErrorController
+
         post "/register/file", FileWorklogController, as: :execute 
       end
     end
+
+    router.insert(0, Grip::Handlers::Log.new)
   end
 
   def port : Int32

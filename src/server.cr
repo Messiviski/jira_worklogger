@@ -1,4 +1,4 @@
 require "./application"
 
-app = Application.new
+app = Application.new(environment: "development")
 app.run
