@@ -1,2 +1,7 @@
 require "spec"
-require "../src/jira_worklogger"
+require "http"
+require "file"
+require "mime/multipart"
+
+require "../src/application"
+require "spectator"

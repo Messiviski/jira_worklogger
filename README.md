@@ -1,6 +1,7 @@
 # Jira Worklogger
 
-TODO: Write a description here
+Log work hours on Jira is boring task and sometimes integrating a tool to Jira can be burocratic, so to solve this problem this tool was developed! 
+This is an independent Jira Worklogger that doesn't integrate with Jira, it only needs the Personal User Access ID. The purpose of this project is that the users easily can log their work hours into the Jira without
 
 ## Installation
 

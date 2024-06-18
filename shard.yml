@@ -12,6 +12,9 @@ dependencies:
   grip:
     github: grip-framework/grip
 
+  spectator:
+    github: grip-framework/spectator
+
 crystal: '>= 1.12.1'
 
 license: MIT
